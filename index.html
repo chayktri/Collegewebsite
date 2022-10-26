@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="index.css" />
+    <title>MITS.ac.in</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">MITSaen</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Campus facilities</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              courses
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Btech</a>
+              <a class="dropdown-item" href="#">MBA</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">MCA</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Announcement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="bd-example">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleCaptions"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="data:image/jpeg;base64,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"
+              height="660px"
+              width="350px"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block slider">
+              <h2>Message</h2>
+              <p>
+                You can’t go back and change the beginning but you can start where you are and change the ending”.
+My dear students, no matter what you do, where you go from here, you will always represent this great old Institution and you must do all in your power to earn goodwill and good name for your alma mater and must always try to live up to its 64-year-old grand legacy.
+On behalf of the management, faculty, alumni and staff, I wish all my students all the best for all their present and future endeavours.
+                
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ4-owNkZkzS7Fno4_6gmrjPoywS4NVaIyGA&usqp=CAU"
+              height="660px"
+              width="350px"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block slider">
+              <h2>Campus, Courses & Centres</h2>
+              <p>
+                The institute has a lush green environment conscious campus of around 44.6 acres which also includes ‘Madhav-Van’ a small teak wood forest where a large variety of birds can be sighted. The Institute offers 11 Bachelors, 18 Masters and Doctoral Degrees Programmes in Engineering and Technology. The Institute is a recognized Quality Improvement Programme (QIP) Centre for PG and Ph.D programs. The prime objective of the institute is to provide quality technical education at undergraduate and postgraduate levels.There is Study Centre of Indira Gandhi National Open University (IGNOU) and Nodal centre of RGPV, Bhopal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleCaptions"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleCaptions"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container marketing">
+      <div class="container text-center courses">
+        <h1>COURSES</h1>
+        
+      </div>
+      <!-- Three columns of text below the carousel -->
+      <div class=" row courserow">
+        <div class="col-lg-4 subject">
+          <img src="BTech-in-Computer-Science2.jpg" class="image" width="140" height="140" alt="">
+          <h2>Btech</h2>
+          <p>Bachelor of Technology (BTech) is a professional undergraduate engineering degree programme awarded to candidates after they complete four years of study in the field. Engineering is one of the most popular courses in India and there are many institutes that offer the course to aspiring students.
+
+            For admissions, the most common BTech entrance examinations are JEE Main and JEE Advanced. </p>
+
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 subject">
+          <img src="download.jpg" width="140" height="140" class="image" alt="">
+          <h2>MBA</h2>
+          <p>A master of business administration (MBA) is a graduate degree that provides theoretical and practical training for business or investment management. An MBA is designed to help graduates gain a better understanding of general business management functions</p>
+
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 subject">
+          <img src="download (2).png"  width="140" height="140" class="image" alt="">
+          <h2>MTech</h2>
+          <p>MTech is Master of Technology. MTech is a professional postgraduate engineering master degree programme awarded to candidates after completion of two years of study in the discipline of engineering. This degree is predicated in a specific branch of engineering.</p>
+
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+  
+  
+      <!-- START THE FEATURETTES -->
+  
+      <hr class="featurette-divider">
+  
+      <!-- /END THE FEATURETTES -->
+  
+    </div>
+    <div class="container  jss">
+    <div class="row featurette">
+      <div class="col-md-7 ">
+        <h2 class="featurette-heading">MADHAV INSTITUTE OF SCIENCE AND TECHNOLOGY , GWALIOR</h2>
+        <p class="lead">Madhav Institute of Technology & Science (MITS), Gwalior was established in 1957 by His Highness Sir Jiwaji Rao Scindia, Maharaja, of the erstwhile state of Gwalior under open door policy of Govt. of India. The foundation stone of the institute was laid by the then President Dr. Rajendra Prasad, on 20th October, 1956 and the building was inaugurated by President Dr. S. Radhakrishnan on 11th December, 1964. On the occasion of Golden Jubilee Celebrations of the institute, the president of India, Dr. Pratibha Devi Singh Patil graced the Golden Jubilee Celebrations of the institute as Chief Guest on 30th June, 2008. A postal stamp on MITS was also released on this occasion.</p>
+      </div>
+      <div class="col-md-5 ">
+        <img src="IMG.jpg"  class="img-fluid img-thumbnail" width="500" height="500" alt="">
+      </div>
+    </div>
+  </div>
+
+    <hr class="featurette-divider">
+    <hr color="black">
+
+
+    <section class="home">
+      <div class="one">
+          <h1>Welcome To MITS Gwalior</h1>
+          <h2>"Mission to Innovate Technology for Society"</h2>
+          
+      </div>
+      <div class="ms">
+          <div class="mission">
+              <h1>Mission</h1>
+              <p>To provide quality education in technical and allied disciplines.
+To organize and arrange innovative courses in Engineering and Technology.
+To arrange vocational courses in the upcoming fields and innovative subjects to meet global advancement.
+To promote research in the fields of Technology and Science</p>
+          </div>
+          <div class="pic">
+              <img class="t"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4qByI2n_fCsyA71X7IAXA89IsLu9jxCDhUg&usqp=CAU" alt="">
+              <h2>Dr. Rajendra Pandit</h2>
+              <h3>director MITS gwalior</h3>
+        
+          </div>
+      <div class="vision">
+          <h1>Vision</h1>
+          <p>To create world class quality Engineers and Technocrats capable of providing leadership in all spheres of life and society </p>
+      </div>
+      </div>
+  </section>
+  
+  
+    <!-- <div class="container2">
+      <div class="container text-center courses">
+        <h1>About us</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+          sapiente.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 coroffer">
+          <div class="card mb-6 shadow-sm">
+            <img src="college.jpg" width="100%" height="400px" alt="" />
+          </div>
+        </div>
+        <div class="col-md-6 coroffer">
+          <div class="card mb-6 shadow-sm">
+            <div class="card-body">
+              <p class="card-text my-2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Commodi cupiditate facere est optio rerum unde tenetur qui
+                voluptatem! Ducimus harum, qui consequatur delectus vitae
+                dignissimos sequi saepe amet quaerat beatae molestias doloribus.
+                Blanditiis in culpa perspiciatis sequi enim? Pariatur, maiores
+                nostrum quaerat commodi alias maxime molestiae! Dolores
+                reprehenderit ad dolorum placeat. Quos officiis Quos officiis
+                Quos officiis
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group"></div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <hr color="black">
+    <!-- <section class="container3">
+        <div class="container text-center courses">
+          <h1>OUR FACILITIES</h1>
+        </div>
+        <div class="row newfac">
+              <div class="col-lg-4 fac">
+                <img src="1553852844phpuY9AVU.jpeg" width="340" height="160" alt="">
+                <h2>CLASSROOMS</h2>
+              </div>
+              <div class="col-lg-4 fac">
+                <img src="Lib5.jpg" width="340" height="160"  alt="">
+                <h2>LIBRARY AND INFORMATION CENTER</h2>
+               
+              </div>
+              <div class="col-lg-4 fac">
+                <img src="DmACDYkU4AER6vq.jpg" width="340" height="160"  alt="">
+                <h2>AUDITORIUM</h2>
+              </div>
+        </div>  
+        <div class="row newfac">
+          <div class="col-lg-4 fac">
+            <img src="1553852844phpuY9AVU.jpeg" width="340" height="140"  alt="">
+            <h2>SPORTS</h2>
+          </div>
+          <div class="col-lg-4 fac">
+            <img src="Lib5.jpg" width="340" height="140"  alt="">
+            <h2>HOSTELS</h2>
+          </div>
+          <div class="col-lg-4 fac">
+            <img src="DmACDYkU4AER6vq.jpg" width="340" height="140"  alt="">
+            <h2>LABS</h2>
+          </div>
+        </div>  
+        </section> -->
+
+    <!-- <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div> -->
+    <!-- -------------------------------------------------------------------------------- -->
+
+    <!-- <section class="container facilities">
+      <div class="container text-center courses1">
+        <h1>COURSES</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+          sapiente.
+        </p>
+      </div>
+      <div class="row home">
+        <div class="col-md-4 fac">
+          <div class="card faccard mb-4 shadow-sm">
+            <img
+              src="1553852844phpuY9AVU.jpeg"
+              width="100%"
+              height="125"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="card-text">CLASSROOMS</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fac">
+          <div class="card mb-4 shadow-sm">
+            <img src="Lib5.jpg" width="100%" height="125" alt="" />
+            <div class="card-body">
+              <p class="card-text">LIBIRARY</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fac">
+          <div class="card mb-4 shadow-sm">
+            <img src="DmACDYkU4AER6vq.jpg" width="100%" height="125" alt="" />
+            <div class="card-body">
+              <p class="card-text">AUDITORIUM</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 fac">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="JSS-Academy-of-Technical-Education-Noida-10.jpg"
+              width="100%"
+              height="125"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="card-text">SPORTS</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fac">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="8437b27d-e0c5-4fd7-9e94-16a1c8148e3f.jfif"
+              width="100%"
+              height="125"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="card-text">HOSTELS</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fac">
+          <div class="card mb-4 shadow-sm">
+            <img src="labs.jpg" width="100%" height="125" alt="" />
+            <div class="card-body">
+              <p class="card-text">LABS</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- -------------------------------------------------------- -->
+    <!-- ----------- -->
+
+    <hr color="black">
+    <section class="hightlight-part">
+      <div class="hightlightoverlay"></div>
+      <div class="container tarif">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="hightlight-content">
+              <h3><center>HIGHLIGHTS</center></h3>
+
+              <p style="color: white; font-size: 22px">
+                <b>
+                  1. NIRF Rank band 201 to 250 in 2020. <br />
+                  2. Education World Magazine has ranked, MITS Gwalior 2nd Rank
+                  in the State of UP and 20th Rank at the National Level, among
+                  the top 100  Engineering Colleges in India.<br />
+                  3. Ministry of Education (MoE) Innovation Cell Gol awarded 4.5
+                  Gold Star Ranking for the academic year 2019-20.<br />
+                  4. Accredited by National Board of Accreditation.<br />
+                  5. AICTE Clean and Green Campus Award 2017-MITS Gwalior stood
+                  I-Position in Northern Region and VII-Position at the National
+                  level.<br />
+                </b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer">
+      <div class="container footer">
+        <div class="row">
+          <div class="col-md-4 box">
+            <div class="card">
+              <p class="foot-head"><b>Address</b></p>
+              <p>MITS Gwalior<br>gola ka mandir<br>near SS tower<br />madhya Pradesh</p>
+              <p>INDIA-401501</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <p class="foot-head"><b>Quick Contact</b></p>
+              <p>Ph:0120-2400104/2400115<br>ph: 9150679255<br>ph: 6743287510</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              
+              <p class="foot-head"><b>Email address</b></p>
+              <p>principal@mitsgwl.ac.in<br>mitsgwl1957@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+        <hr />
+    <footer>
+        <div class="container form my-4">
+          <h2>Contact us</h2>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email address">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Phone number</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="phone number">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">select your query</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">write your query</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary">Sumbit</button>
+          </form>
+        </div>
+    </footer> 
+
+
+<!-- <footer class="text-center text-lg-start bg-light text-muted">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right 
+  </section> -->
+
+  <footer class="text-center foc text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
